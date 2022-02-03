@@ -44,7 +44,7 @@ public class CostumerService {
 
         costumerRepository.deleteById(id);
     }
-    //Atualiza uma ID
+    //Atualizar informacoes por ID
     public MessageResponseDTO updateByID(Long id, CostumerDTO costumerDTO) throws CostumerNotFoundException {
         verifyIfExists(id);
         Costumer costumerToUpdate = costumerMapper.toModel(costumerDTO);

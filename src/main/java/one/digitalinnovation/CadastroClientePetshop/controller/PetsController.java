@@ -2,6 +2,7 @@ package one.digitalinnovation.CadastroClientePetshop.controller;
 
 import lombok.AllArgsConstructor;
 import one.digitalinnovation.CadastroClientePetshop.dto.MessageResponseDTO;
+import one.digitalinnovation.CadastroClientePetshop.dto.request.CostumerDTO;
 import one.digitalinnovation.CadastroClientePetshop.dto.request.PetDTO;
 import one.digitalinnovation.CadastroClientePetshop.entity.Pet;
 import one.digitalinnovation.CadastroClientePetshop.exception.CostumerNotFoundException;
@@ -33,15 +34,24 @@ public class PetsController {
         return petService.createPet(petDTO);
     }
 
-    @GetMapping(value = "/consulta-pets-clientes-id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping("/pets/{id}")
+    public MessageResponseDTO updateById(@PathVariable Long id, @RequestBody @Valid PetDTO petDTO) throws PetNotFoundException {
+        return petService.updateByID(id, petDTO);
+    }
+
+    @GetMapping(value = "/consulta-pets-por-id-cliente/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Pet> listAllByCliente(@PathVariable Long id) throws CostumerNotFoundException {
         return petService.obterPetsPorIdCliente(id);
     }
 
-    @GetMapping("/pets/{id}")
+    @GetMapping("/consultar-pets/{id}")
     public PetDTO findById(@PathVariable Long id) throws PetNotFoundException {
         return petService.findById(id);
     }
 
-
+    @DeleteMapping("/deletar-pets/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@PathVariable Long id) throws PetNotFoundException{
+        petService.delete(id);
+    }
 }

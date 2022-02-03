@@ -44,20 +44,24 @@ public class PetService {
         CostumerDTO dto = costumerService.findById(id);
         Costumer costumer = costumerRepository.getById(dto.getId());
         List<Pet> listaPetsCliente = petRepository.findByCostumer(costumer);
-        return  listaPetsCliente;
+        return listaPetsCliente;
+    }
+
+    public void delete(Long id) throws PetNotFoundException {
+        verifyIfExists(id);
+        petRepository.deleteById(id);
+    }
+
+    public MessageResponseDTO updateByID(Long id, PetDTO petDTO) throws PetNotFoundException {
+        verifyIfExists(id);
+        Pet petToUpdate = petMapper.toModel(petDTO);
+        Pet updatedPet = petRepository.save(petToUpdate);
+        return createMessageResponse(updatedPet.getId(), "Updated Costumer with ID ");
     }
 
     public PetDTO findById(Long id) throws PetNotFoundException {
         Pet pet = verifyIfExists(id);
         return petMapper.toDTO(pet);
-    }
-
-    public CostumerDTO consultaCostumerId(Long id) throws CostumerNotFoundException {
-        CostumerDTO costumer = costumerService.findById(id);
-        if(costumer == null){
-            throw new CostumerNotFoundException(id);
-        }
-        return costumer;
     }
 
     private Pet verifyIfExists(Long id) throws  PetNotFoundException{
