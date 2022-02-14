@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
+  color: azure;
+}
+
+.btn-grad1 {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%)}
+.btn-grad1 {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad1:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+ .wrapper{
+  margin-top: 50px;
+}
+.wrapperbotton{
+  margin-top: 150px;
+}
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+}
+

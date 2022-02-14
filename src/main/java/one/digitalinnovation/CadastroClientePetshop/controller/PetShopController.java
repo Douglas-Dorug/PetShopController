@@ -25,25 +25,25 @@ public class PetShopController {
         return costumerService.createCostumer(costumerDTO);
     }
 
-    @GetMapping("/listar-clientes")
+    @GetMapping("/clientes/listar-clientes")
     public List<CostumerDTO> listAll(){
         return costumerService.listALL();
 
     }
     //Procura por um cliente pelo seu ID
-    @GetMapping("/listar-cliente/{id}")
+    @GetMapping("/clientes/listar-cliente/{id}")
     public CostumerDTO findById (@PathVariable Long id) throws CostumerNotFoundException {
         return costumerService.findById(id);
     }
 
     //Atualiza um ID
-    @PutMapping("/atualizar-cliente/{id}")
+    @PutMapping("/clientes/atualizar-cliente/{id}")
     public MessageResponseDTO updateById(@PathVariable Long id,@RequestBody @Valid CostumerDTO costumerDTO) throws CostumerNotFoundException {
         return costumerService.updateByID(id,costumerDTO);
     }
 
     //Deleta um cliente por seu ID
-    @DeleteMapping("/deletar-cliente/{id}")
+    @DeleteMapping("/clientes/deletar-cliente/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable Long id) throws CostumerNotFoundException {
         costumerService.delete(id);
