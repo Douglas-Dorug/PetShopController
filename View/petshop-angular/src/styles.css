@@ -27,7 +27,10 @@ body{
  .wrapper{
   margin-top: 50px;
 }
-.wrapperbotton{
+.wrapperdown{
+  margin-bottom: 25px;
+}
+.wrapperBottonName{
   margin-top: 150px;
 }
 .center{

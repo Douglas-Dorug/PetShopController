@@ -58,7 +58,7 @@ public class Costumer {
     private String referencia;
 
     @NotEmpty
-    @Size(min = 9,max = 11 )
+    @Size(min = 9,max = 13 )
     @Column
     private String numContato;
 

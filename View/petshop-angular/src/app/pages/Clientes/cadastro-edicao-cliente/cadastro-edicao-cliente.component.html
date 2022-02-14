@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-6"><i class="fas fa-address-card"></i> {{ formValue.get('id')?.value ? 'Edição': 'Cadastro'}} de Cliente</h1>
+      <hr>
+      <form [formGroup]="formValue" (ngSubmit)="enviar()">
+        <div class="mb-3">
+          <label class="form-label">Nome Completo *</label>
+          <input type="text" class="form-control" formControlName="fullName">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">CPF *</label>
+          <input type="text" class="form-control" formControlName="cpf">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Data de nascimento com " - " entre os números</label>
+          <input type="text" class="form-control" formControlName="birthDate">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">E-mail *</label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Numero para contato *</label>
+          <input type="text" class="form-control" formControlName="numContato">
+        </div>
+        <h2 class="wrapper">Endereço</h2>
+        <div class="mb-3">
+          <label class="form-label">Rua *</label>
+          <input type="text" class="form-control" formControlName="rua">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Bairro *</label>
+          <input type="text" class="form-control" formControlName="bairro">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Numero da casa *</label>
+          <input type="text" class="form-control" formControlName="numeroCasa">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Referencia</label>
+          <textarea class="form-control" cols="30" rows="3" formControlName="referencia"></textarea>
+        </div>
+        <a routerLink='/clientes' class="btn btn-danger me-md-2">Voltar</a>
+        <button [disabled]="!formValue.valid" type="submit" class="btn btn-primary ">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

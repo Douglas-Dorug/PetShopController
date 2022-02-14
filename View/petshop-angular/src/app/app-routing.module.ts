@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastroEdicaoClienteComponent } from './pages/Clientes/cadastro-edicao-cliente/cadastro-edicao-cliente.component';
 import { ListarTodosComponent } from './pages/Clientes/listar-todos/listar-todos.component';
 import { ServicosClientesComponent } from './pages/Clientes/servicos-clientes/servicos-clientes.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     path: 'clientes/lista', component: ListarTodosComponent
+  },
+  {
+    path: 'clientes/cadastro', component: CadastroEdicaoClienteComponent
   }
 ];
 

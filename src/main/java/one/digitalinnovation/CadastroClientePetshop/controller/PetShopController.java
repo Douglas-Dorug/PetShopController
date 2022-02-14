@@ -31,7 +31,7 @@ public class PetShopController {
 
     }
     //Procura por um cliente pelo seu ID
-    @GetMapping("/clientes/listar-cliente/{id}")
+    @GetMapping("/clientes/obter-cliente/{id}")
     public CostumerDTO findById (@PathVariable Long id) throws CostumerNotFoundException {
         return costumerService.findById(id);
     }

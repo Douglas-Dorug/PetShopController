@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { ServicosClientesComponent } from './Clientes/servicos-clientes/servicos-clientes.component';
 import { ListarTodosComponent } from './Clientes/listar-todos/listar-todos.component';
+import { CadastroEdicaoClienteComponent } from './Clientes/cadastro-edicao-cliente/cadastro-edicao-cliente.component';
 
 
 
@@ -13,7 +14,8 @@ import { ListarTodosComponent } from './Clientes/listar-todos/listar-todos.compo
   declarations: [
     HomeComponent,
     ServicosClientesComponent,
-    ListarTodosComponent
+    ListarTodosComponent,
+    CadastroEdicaoClienteComponent
   ],
   imports: [
     CommonModule,

@@ -15,4 +15,11 @@ export class ClienteService {
   listarTodosClientes(){
     return this.http.get<IClientes[]>(`${this.api}/${this.endpoint}/listar-clientes`);
   }
+
+  cadastrar(costumer: IClientes){
+    return this.http.post(`${this.api}/${this.endpoint}`, costumer);
+  }
+  buscarPorId(id: number){
+    return this.http.get<IClientes>(`${this.api}/${this.endpoint}/obter-cliente/${id}`);
+  }
 }
