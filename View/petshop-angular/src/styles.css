@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
-  color: azure;
+  background-repeat: repeat;
+  background: url("assets\patinhasMenor.jpg") !important;
 }
 
 .btn-grad1 {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%)}

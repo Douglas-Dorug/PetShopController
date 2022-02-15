@@ -1,0 +1,13 @@
+.container{
+  margin-top: 50px;
+  background: linear-gradient(90deg, #21737e 0%, #3b1ab3 100%);
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
