@@ -1,14 +1,38 @@
-.img-logo{
-  width:50%;
-  height:350px;
-  border-radius: 10px;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 5px;
-}
 h2{
+  margin-top: 15px;
   text-align: center;
 }
 p{
+  margin-top: 80px;
+  width: 500px;
   text-align: center;
+  margin-left: 210px;
+
+}
+
+.clientes{
+  background:linear-gradient(rgba(0, 0, 0, 0.664),rgba(0, 0, 0, 0.603)100%),url('Clientes.jpg');
+  width: 900px;
+  height: 300px;
+  margin-left: 100px;
+  border-radius: 30px;
+
+}
+
+.pets{
+  background:linear-gradient(rgba(0, 0, 0, 0.699),rgba(0, 0, 0, 0.582)100%),url('pets.jpg');
+  width: 900px;
+  height: 300px;
+  margin-left: 100px;
+  border-radius: 30px;
+}
+
+
+.btn-grad1{
+  display: flex;
+  align-items: center;
+  opacity: none;
+  justify-content: center;
+  margin-top: 40px;
+
 }
