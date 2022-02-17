@@ -8,18 +8,22 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
-            <th scope="col">CPF</th>
+            <th scope="col">Raça</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Tutor</th>
             <th scope="col">Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let clientes of clientes">
-            <th>{{clientes.id}}</th>
-            <td>{{clientes.fullName}}</td>
-            <td>{{clientes.cpf}}</td>
+          <tr *ngFor="let pets of pets">
+            <th>{{pets.id}}</th>
+            <td>{{pets.nome}}</td>
+            <td>{{pets.raca}}</td>
+            <td>{{pets.idade}}</td>
+            <td>{{pets.costumer.fullName}}</td>
             <td>
-              <a [routerLink]="['editar', clientes.id]" class="btn btn-warning btn-sm mx-1">Editar</a>
-              <a (click)="deletarCliente(clientes.id)" class="btn btn-danger btn-sm mx-1">Remover</a>
+              <a [routerLink]="['editar', pets.id]" class="btn btn-warning btn-sm mx-1">Editar</a>
+              <a (click)="deletarPet(pets.id)" class="btn btn-danger btn-sm mx-1">Remover</a>
             </td>
           </tr>
         </tbody>

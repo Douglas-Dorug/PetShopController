@@ -7,6 +7,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ServicosClientesComponent } from './Clientes/servicos-clientes/servicos-clientes.component';
 import { ListarTodosComponent } from './Clientes/listar-todos/listar-todos.component';
 import { CadastroEdicaoClienteComponent } from './Clientes/cadastro-edicao-cliente/cadastro-edicao-cliente.component';
+import { ServicosPetsComponent } from './Pets/servicos-pets/servicos-pets.component';
+import { ListagemPetsComponent } from './Pets/listagem-pets/listagem-pets.component';
+import { CadastroPetsComponent } from './Pets/cadastro-pets/cadastro-pets.component';
 
 
 
@@ -15,7 +18,10 @@ import { CadastroEdicaoClienteComponent } from './Clientes/cadastro-edicao-clien
     HomeComponent,
     ServicosClientesComponent,
     ListarTodosComponent,
-    CadastroEdicaoClienteComponent
+    CadastroEdicaoClienteComponent,
+    ServicosPetsComponent,
+    ListagemPetsComponent,
+    CadastroPetsComponent
   ],
   imports: [
     CommonModule,

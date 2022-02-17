@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import one.digitalinnovation.CadastroClientePetshop.dto.MessageResponseDTO;
 import one.digitalinnovation.CadastroClientePetshop.dto.request.CostumerDTO;
 import one.digitalinnovation.CadastroClientePetshop.dto.request.PetDTO;
+import one.digitalinnovation.CadastroClientePetshop.dto.response.PetResponseDTO;
 import one.digitalinnovation.CadastroClientePetshop.entity.Pet;
 import one.digitalinnovation.CadastroClientePetshop.exception.CostumerNotFoundException;
 import one.digitalinnovation.CadastroClientePetshop.exception.PetNotFoundException;
@@ -37,6 +38,11 @@ public class PetsController {
     @PutMapping("/pets/{id}")
     public MessageResponseDTO updateById(@PathVariable Long id, @RequestBody @Valid PetDTO petDTO) throws PetNotFoundException {
         return petService.updateByID(id, petDTO);
+    }
+
+    @GetMapping("/pets/listar-todos")
+    public List<PetResponseDTO> listAll(){
+        return petService.listALL();
     }
 
     @GetMapping(value = "/pets/consulta-pets-por-id-cliente/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

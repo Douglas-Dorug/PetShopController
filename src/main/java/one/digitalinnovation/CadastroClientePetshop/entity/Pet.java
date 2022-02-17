@@ -37,7 +37,7 @@ public class Pet {
     @Column(nullable = false)
     private String raca;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "fk_clientes_id", nullable = false)
     private Costumer costumer;
 }

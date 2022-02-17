@@ -19,7 +19,12 @@ export class ClienteService {
   cadastrar(costumer: IClientes){
     return this.http.post(`${this.api}/${this.endpoint}`, costumer);
   }
+
   buscarPorId(id: number){
     return this.http.get<IClientes>(`${this.api}/${this.endpoint}/obter-cliente/${id}`);
+  }
+
+  removerCliente(id: number){
+    return this.http.delete(`${this.api}/${this.endpoint}/deletar-cliente/${id}`)
   }
 }

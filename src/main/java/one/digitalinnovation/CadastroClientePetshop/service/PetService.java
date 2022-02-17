@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import one.digitalinnovation.CadastroClientePetshop.dto.MessageResponseDTO;
 import one.digitalinnovation.CadastroClientePetshop.dto.request.CostumerDTO;
 import one.digitalinnovation.CadastroClientePetshop.dto.request.PetDTO;
+import one.digitalinnovation.CadastroClientePetshop.dto.response.PetResponseDTO;
 import one.digitalinnovation.CadastroClientePetshop.entity.Costumer;
 import one.digitalinnovation.CadastroClientePetshop.entity.Pet;
 import one.digitalinnovation.CadastroClientePetshop.exception.CostumerNotFoundException;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor(onConstructor = @__(@Autowired))
@@ -62,6 +64,13 @@ public class PetService {
     public PetDTO findById(Long id) throws PetNotFoundException {
         Pet pet = verifyIfExists(id);
         return petMapper.toDTO(pet);
+    }
+
+    public List<PetResponseDTO> listALL(){
+        List<Pet> allPets = petRepository.findAll();
+        return allPets.stream()
+                .map(petMapper::toResponseDTO)
+                .collect(Collectors.toList());
     }
 
     private Pet verifyIfExists(Long id) throws  PetNotFoundException{
