@@ -34,18 +34,19 @@ export class ListagemPetsComponent implements OnInit {
       cancelButtonColor: '#3085d6',
      confirmButtonText: 'Sim, delete!'
     }).then((result) =>{
-      this.petsService.removerPet(id).subscribe(result => {
-        this.listarTodos();
-        Swal.fire(
-          'Deletado!',
-          'O Pet foi removido com sucesso!',
-          'success'
-        )
-      }, error =>{
+      if(result.isConfirmed){
+        this.petsService.removerPet(id).subscribe(result => {
+          this.listarTodos();
+          Swal.fire(
+            'Deletado!',
+            'O Pet foi removido com sucesso!',
+            'success'
+          )
+        }, error =>{
         Swal.fire('Opa......','Algo deu errado durante a operação!','error')
         console.error(error)
       })
-    })
+    }
+  })
   }
-
 }

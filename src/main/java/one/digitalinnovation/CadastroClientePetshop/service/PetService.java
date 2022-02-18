@@ -61,9 +61,9 @@ public class PetService {
         return createMessageResponse(updatedPet.getId(), "Updated Costumer with ID ");
     }
 
-    public PetDTO findById(Long id) throws PetNotFoundException {
+    public PetResponseDTO findById(Long id) throws PetNotFoundException {
         Pet pet = verifyIfExists(id);
-        return petMapper.toDTO(pet);
+        return petMapper.toResponseDTO(pet);
     }
 
     public List<PetResponseDTO> listALL(){

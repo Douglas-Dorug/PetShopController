@@ -51,7 +51,7 @@ public class PetsController {
     }
 
     @GetMapping("/pets/consultar-pets/{id}")
-    public PetDTO findById(@PathVariable Long id) throws PetNotFoundException {
+    public PetResponseDTO findById(@PathVariable Long id) throws PetNotFoundException {
         return petService.findById(id);
     }
 

@@ -6,5 +6,6 @@ export interface IPets{
   nome: string;
   idade: string;
   raca: string;
-  costumer: IClientes
+  costumer: IClientes;
+  idCliente: string;
 }

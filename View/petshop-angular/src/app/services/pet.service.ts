@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { IPetCadastro } from '../interfaces/pet-cadastro';
 import { IPets } from '../interfaces/pets';
 
 @Injectable({
@@ -16,7 +17,11 @@ export class PetService {
     return this.http.get<IPets[]>(`${this.api}/${this.endpoint}/listar-todos`);
   }
 
-  cadastrar(pet: IPets){
+  editar(pet: IPets){
+    return this.http.post(`${this.api}/${this.endpoint}`, pet);
+  }
+
+  cadastrar(pet: IPetCadastro){
     return this.http.post(`${this.api}/${this.endpoint}`, pet);
   }
 

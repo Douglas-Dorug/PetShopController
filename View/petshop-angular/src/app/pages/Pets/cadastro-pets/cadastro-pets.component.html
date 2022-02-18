@@ -1,1 +1,38 @@
-<p>cadastro-pets works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-6"><i class="fas fa-address-card"></i> {{ formValue.get('id')?.value ? 'Edição': 'Cadastro'}} de Pet</h1>
+      <hr>
+      <form [formGroup]="formValue" (ngSubmit)="enviar()">
+        <h2 class="wrapper">Identificação do cliente (ID)</h2>
+        <div class="mb-3" style="padding: 10px 45%;">
+          <label class="form-label">ID cliente *</label>
+          <input type="text" class="form-control" formControlName="idCliente">
+        </div>
+        <h2 class="wrapper">Dados do Pet</h2>
+        <div class="mb-3">
+          <label class="form-label">Nome *</label>
+          <input type="text" class="form-control" formControlName="nome">
+        </div>
+        <div  style="padding: 10px 40%;" class="mb-3">
+          <label class="form-label">Tipo *</label>
+          <select class="form-select" formControlName="type">
+            <option value="DOG">Cão</option>
+            <option value="CAT">Gato</option>
+            <option value="OTHER">Outros</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Raça</label>
+          <input type="text" class="form-control" formControlName="raca">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Idade</label>
+          <input type="text" class="form-control" formControlName="idade">
+        </div>
+        <a routerLink='/pets' class="btn btn-danger me-md-2">Voltar</a>
+        <button [disabled]="!formValue.valid" type="submit" class="btn btn-primary ">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
