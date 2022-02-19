@@ -10,6 +10,7 @@ import { CadastroEdicaoClienteComponent } from './Clientes/cadastro-edicao-clien
 import { ServicosPetsComponent } from './Pets/servicos-pets/servicos-pets.component';
 import { ListagemPetsComponent } from './Pets/listagem-pets/listagem-pets.component';
 import { CadastroPetsComponent } from './Pets/cadastro-pets/cadastro-pets.component';
+import { ListarTodosPorClienteComponent } from './Pets/listar-todos-por-cliente/listar-todos-por-cliente.component';
 
 
 
@@ -21,7 +22,8 @@ import { CadastroPetsComponent } from './Pets/cadastro-pets/cadastro-pets.compon
     CadastroEdicaoClienteComponent,
     ServicosPetsComponent,
     ListagemPetsComponent,
-    CadastroPetsComponent
+    CadastroPetsComponent,
+    ListarTodosPorClienteComponent
   ],
   imports: [
     CommonModule,

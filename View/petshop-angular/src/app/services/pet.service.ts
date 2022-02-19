@@ -17,6 +17,10 @@ export class PetService {
     return this.http.get<IPets[]>(`${this.api}/${this.endpoint}/listar-todos`);
   }
 
+  listarTodosPetsIdCliente(id: string){
+    return this.http.get<IPets[]>(`${this.api}/${this.endpoint}/consulta-pets-por-id-cliente/${id}`)
+  }
+
   editar(pet: IPets){
     return this.http.post(`${this.api}/${this.endpoint}`, pet);
   }

@@ -6,6 +6,7 @@ import { ServicosClientesComponent } from './pages/Clientes/servicos-clientes/se
 import { HomeComponent } from './pages/home/home.component';
 import { CadastroPetsComponent } from './pages/Pets/cadastro-pets/cadastro-pets.component';
 import { ListagemPetsComponent } from './pages/Pets/listagem-pets/listagem-pets.component';
+import { ListarTodosPorClienteComponent } from './pages/Pets/listar-todos-por-cliente/listar-todos-por-cliente.component';
 import { ServicosPetsComponent } from './pages/Pets/servicos-pets/servicos-pets.component';
 
 const routes: Routes = [
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'clientes/lista', component: ListarTodosComponent
+  },
+  {
+    path: 'clientes/lista/pet-list/:id', component: ListarTodosPorClienteComponent
   },
   {
     path: 'clientes/cadastro', component: CadastroEdicaoClienteComponent

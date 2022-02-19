@@ -20,6 +20,7 @@
             <td>
               <a [routerLink]="['editar', clientes.id]" class="btn btn-warning btn-sm mx-1">Editar</a>
               <a (click)="deletarCliente(clientes.id)" class="btn btn-danger btn-sm mx-1">Remover</a>
+              <a [routerLink]="['pet-list/', clientes.id]" class="btn btn-success btn-sm mx-1">Pets</a>
             </td>
           </tr>
         </tbody>
