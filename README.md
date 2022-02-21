@@ -4,6 +4,14 @@ Projeto criado para desenvolvimento de uma aplicação REST de cadastro de clien
 O projeto consiste em uma API que simula uma aplicação de gerenciamento e possibilita ao usuário, realizar o CRUD de clientes 
 e seus respectivos pets.
 
+**Desenvolvedores**
+*Back-End*
+- Douglas Luiz
+
+*Front-End*
+- Douglas Luiz
+- Fernanda dos Santos
+
 **Back-End:**
 - Java ![Badge](https://img.shields.io/badge/Java-v11-red)
 - Git
