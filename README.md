@@ -40,7 +40,8 @@ as dependencias necessárias para o funcionamento.
     ..src/main/java/one/digitalinnovation/CadastroClientePetshop/CadastroClientePetshopApplication.java
     Feito isto, o back-end estará funcionando
 
-    Obs: Para que a aplicação inicie normalmente, um banco de dados MySQL deverá estar rodando em //localhost:3306/petshopdb ou deverá ser informado um novo caminho.
+    Obs: Para que a aplicação inicie normalmente, um banco de dados MySQL deverá estar rodando em 
+    //localhost:3306/petshopdb ou deverá ser informado um novo caminho.
 
 Para acessar a API, utilize o endereço: http://localhost:8080/swagger-ui.html#/ no browser.
 
