@@ -1,87 +1,81 @@
-# Projeto Cadastro Cliente Petshop
+**SOBRE O QUE É O PROJETO?**
+========================================================================
+Projeto criado para desenvolvimento de uma aplicação REST de cadastro de clientes e animais de um petshop. 
+O projeto consiste em uma API que simula uma aplicação de gerenciamento e possibilita ao usuário, realizar o CRUD de clientes 
+e seus respectivos pets.
 
-## Objetivo
+**Back-End:**
+- Java ![Badge](https://img.shields.io/badge/Java-v11-red)
+- Git
+- Lombok  ![Badge](https://img.shields.io/badge/Lombok-vv1.18.20-red)
+- Criando um projeto Spring
+- Maven ![Badge](https://img.shields.io/badge/Maven-v3.8.4-red)
+- Spring Boot ![Badge](https://img.shields.io/badge/Spring-v2.5.2-green)
+- Api (Rest)
+- Swagger ![Badge](https://img.shields.io/badge/Swagger-v2.9.2-green)
+- JPA (Hibernate)
+- Spring Data
+- MySQL ![Badge](https://img.shields.io/badge/MariaDB-v10.6-important)
 
-- No Bootcamp Code-Anywhere foi desenvolvido um sistema de gerenciamento de pessoas utilizando API REST.
-    - O mesmo pode ser encontrado no link: [Douglas-Dorug/person_api_bootcamp: Project from DIO for User registration (github.com)](https://github.com/Douglas-Dorug/person_api_bootcamp)
-  
-- Visando utilizar o mesmo conceito visto no curso, mas criando alterações, optei por criar um sistema API REST para cadastro de clientes em um petshop.
+**Front-End:**
 
-- Assim, foi criado um **API REST** para _cadastrar_, _alterar_, _recuperar_ e _deletar_ um cliente, com todas as informações que o mesmo possui.
+- Angular CLI ![Badge](https://img.shields.io/badge/ng-v13.2.3-blue)
+- Bootstrap ![Badge](https://img.shields.io/badge/Bootstrap-v5.1.1-blueviolet)
+- Node ![Badge](https://img.shields.io/badge/Node-v16.13.2-green)
+- FontAwesome
+- SweetAlert2
 
-- Iremos criar nossa API utilizando o sistema de banco de dados **H2**.
+**Iniciando o Back-End**
+========================================================================
+Para a criação e execução do progeto foi utilizada o Eclipse como IDE para desenvolvimento java onde foram instaladas
+as dependencias necessárias para o funcionamento.
 
-- O cliente, conta com as seguintes informações:
-  - Nome
-  - CPF
-  - Data de Nascimento
-  - Endereço
-    - Nome da rua com bairro.
-    - Número do endereço.
-    - Referencia de local proximo ou detalhes da casa.
-    - Utilizado a relação `@OneToOne`
-  - Telefone
-    - Numero com DDD e tipo do aparelho.
-    - Utilizado a relação `@OneToMany`.
-  - Pets
-    - Nome, raça e tipo.
-    - Nesse caso também foi utilizado a relação `@OneToMany`, visto que os clientes também podem ter mais de um pet.
+**Back-End**
 
-### Sobre as Camadas
+	Primeiramente deve-se clonar o repositório no endereço:
+	
+	https://github.com/Douglas-Dorug/PetShopController
+	
+	Após o projeto ser clonado, execute a aplicação que se encontra em 
+    ..src/main/java/one/digitalinnovation/CadastroClientePetshop/CadastroClientePetshopApplication.java
+    Feito isto, o back-end estará funcionando
 
-#### Entity
+    Obs: Para que a aplicação inicie normalmente, um banco de dados MySQL deverá estar rodando em //localhost:3306/petshopdb ou deverá ser informado um novo caminho.
 
-- Aqui iniciamos com a criação das entidades que existem no nosso banco de dados, ela representa exatamente nosso banco
-- Possuimos uma entidade para cada tabela do nosso banco de dados.
-- O ponto mais importante das entidades é criar uma relação entre as tabelas. Para isso utilizamos anotações de relacionamento.
-  - A tabela que será responsável, a "principal" entre as outras, é a **Costumer (Cliente)**.
-#### Controller
+Para acessar a API, utilize o endereço: http://localhost:8080/swagger-ui.html#/ no browser.
 
-- Camada responsável pelo mapeamento dos métodos HTTP. Essa é a camada que estará visível em nossa interface, para apartir do **path** definido enviarmos as requisições e informações para a camada Service.
-- Nessa camada não vamos interagir com as entidades, a fim de seguir o padrão RESTful usaremos uma camada DTO, onde podemos definir regras para nosso atributo e controlar o que realmente vai para nosso banco de Dados. Em nosso exemplo vamos definir anotações de CPF. De forma a respeitarem o padrão correto, sem que seja necessário criar uma classe para checar se as informações passadas estão corretas.
 
-#### Service
+**Iniciando o Front-End**
+========================================================================
 
-- Camada responsável pelas regras de negócio. As requisições provenientes da camada controller é recebida e executada, seguindo as regras definidas.
--  Nessa camada iremos interagir com o Banco de Dados, a partir da camada Repository.
+Para a criação e execução do projeto foi utilizado o Visual Studio Code como IDE para desenvolvimento Angular.
 
-#### Repository
+**Front-End**
 
-- Camada na qual fazemos a interação com nosso banco de dados, salvando, alternado, recuperando e excluindo dados diretamente do banco.
+	Primeiramente deve-se acessar a pasta do View/petshop-angular para ter acesso 
+    aos arquivos do projeto em Angular.
+    Utilizar o comando *npm install* para baixar as dependencias do projeto (node modules).
+    Feito isto, basta utilizar o comando *ng serve* ou *npm start* no terminal para iniciar
+    o projeto
 
-### Como inserir dados
+Para acessar a API, utilize o endereço: localhost:4200 no browser para acessar a homepage.
 
-- A inserção de dados é feita a partir de um JSON. Um exemplo pode ser visto abaixo:
 
-``` {
-{
-    "firstName":"Douglas",
-    "lastName":"Luiz",
-    "cpf": "999.999.999-99",
-    "birthDate": "15-01-1997",
-    "address": {
-        "street": "Rua 10 de janeiro",
-        "number": "205 B",
-        "reference": "Casa azul de primeiro andar"
-    },
-    "phones": [
-        {
-            "type":"MOBILE",
-            "number": "(81)9999999"
-        }
-    ],
-    "pets": [
-        {
-            "type": "CAT",
-            "name": "Chiquinho",
-            "breed": "Sem raça definida"
-        },
-        {
-            "type": "DOG",
-            "name": "Bolt",
-            "breed": "Sem raça definida"
-        }
-    ]
+Imagens Finais do projeto:
+========================================================================
 
-}
-```
+## Layout HomePage
+
+![web](https://github.com/Douglas-Dorug/PetShopController/blob/master/View/Assets/Home_Page.png)
+
+## Layout Listagem de Funções Clientes
+
+![web](https://github.com/Douglas-Dorug/PetShopController/blob/master/View/Assets/Pagina_Cliente.png)
+
+## Layout Pagina de Cadastro Clientes
+
+![web](https://github.com/Douglas-Dorug/PetShopController/blob/master/View/Assets/Pagina_Cadastro.png)
+
+## Layout Pagina de Listagem de Clientes
+
+![web](https://github.com/Douglas-Dorug/PetShopController/blob/master/View/Assets/Listagem_clientes_Certo.png)
