@@ -5,6 +5,7 @@ O projeto consiste em uma API que simula uma aplicação de gerenciamento e poss
 e seus respectivos pets.
 
 **Desenvolvedores**
+
 *Back-End*
 - Douglas Luiz
 
