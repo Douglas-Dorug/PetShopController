@@ -36,7 +36,7 @@ e seus respectivos pets.
 
 **Iniciando o Back-End**
 ========================================================================
-Para a criação e execução do progeto foi utilizada o Eclipse como IDE para desenvolvimento java onde foram instaladas
+Para a criação e execução do progeto foi utilizada o Intellij como IDE para desenvolvimento java onde foram instaladas
 as dependencias necessárias para o funcionamento.
 
 **Back-End**
