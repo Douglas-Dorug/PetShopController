@@ -21,24 +21,24 @@ public class PetShopController {
 
     @PostMapping("/clientes")
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO createCostumer(@RequestBody @Valid CostumerDTO costumerDTO){
-        return costumerService.createCostumer(costumerDTO);
+    public MessageResponseDTO saveCostumer(@RequestBody @Valid CostumerDTO costumerDTO){
+        return costumerService.saveCostumer(costumerDTO);
     }
 
     @GetMapping("/clientes/listar-clientes")
     public List<CostumerDTO> listAll(){
-        return costumerService.listALL();
-
+        return costumerService.listAll();
     }
+
     //Procura por um cliente pelo seu ID
     @GetMapping("/clientes/obter-cliente/{id}")
-    public CostumerDTO findById (@PathVariable Long id) throws CostumerNotFoundException {
+    public CostumerDTO findById(@PathVariable Long id) throws CostumerNotFoundException{
         return costumerService.findById(id);
     }
 
     //Atualiza um ID
     @PutMapping("/clientes/atualizar-cliente/{id}")
-    public MessageResponseDTO updateById(@PathVariable Long id,@RequestBody @Valid CostumerDTO costumerDTO) throws CostumerNotFoundException {
+    public MessageResponseDTO updateByIdTest(@PathVariable Long id, @RequestBody @Valid CostumerDTO costumerDTO) throws CostumerNotFoundException{
         return costumerService.updateByID(id,costumerDTO);
     }
 
